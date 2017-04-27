@@ -1,4 +1,34 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import '../public/style.css'
 
-ReactDOM.render(<div>Hello</div>, document.getElementById("app"))
+export default class App extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      searchTerm: ''
+    }
+
+    this.handleSearchTermChange = this.handleSearchTermChange.bind(this)
+  }
+
+  handleSearchTermChange (e) {
+    this.setState({
+      searchTerm: e.target.value
+    })
+  }
+
+  render () {
+    return (
+      <div>
+        <h1>Search for your favorite Marvel character</h1>
+        <input
+          className='searchBar'
+          type='text'
+          placeholder='search'
+          value={this.state.searchTerm}
+          onChange={this.handleSearchTermChange}
+        />
+      </div>
+    )
+  }
+}

@@ -5,6 +5,9 @@
   "repository": "https://github.com/Matthew-Burfield/marvel-app.git",
   "author": "Matthew Burfield <burfie@hotmail.com> (https://matthew-burfield.github.io/)",
   "license": "MIT",
+  "scripts": {
+    "dev": "webpack-dev-server"
+  },
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-core": "^6.24.1",
@@ -15,12 +18,17 @@
     "babel-preset-es2017": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.24.1",
+    "css-loader": "^0.28.0",
     "eslint": "^3.19.0",
     "eslint-config-standard": "10.2.1",
+    "eslint-config-standard-jsx": "^4.0.1",
+    "eslint-config-standard-react": "^5.0.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-node": "^4.2.2",
     "eslint-plugin-promise": "3.5.0",
+    "eslint-plugin-react": "^6.10.3",
     "eslint-plugin-standard": "3.0.1",
+    "style-loader": "^0.16.1",
     "webpack": "^2.4.1",
     "webpack-dev-server": "^2.4.5"
   },
