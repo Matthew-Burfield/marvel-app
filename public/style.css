@@ -1,7 +1,129 @@
-input.searchBar {
-  background: #fff;
+/**
+ * Color Palet:
+ *  #e23636	(226,54,54)
+ *  #000000	(0,0,0)
+ *  #504a4a	(80,74,74)
+ *  #518cca	(81,140,202)
+ *  #f78f3f	(247,143,63)
+ */
+
+ @import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+body {
+  display: block;
+  margin: 0px;
+}
+
+.app {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #333;
+}
+
+.app > h1 {
+  color: white;
+}
+
+header {
+    color: #fff;
+    width: 100%;
+    background-color: #e23636;
+    font-family: 'PT Sans', sans-serif;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.headerContainer {
+    width: auto;
+    max-width: 1280px;
+    float: none;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0;
+    padding-right: 0
+}
+
+.headerContainer:after {
+    content: "";
+    display: table;
+    clear: both
+}
+
+.headerLogo {
+    color: #fff;
+    letter-spacing: -5px;
+    font-size: 40px;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    margin-bottom: 0;
+    font-weight: 900;
+    float: left;
+    margin: 20px 40px;
+}
+
+.headerLogo:hover {
+    color: #f9627d
+}
+
+.headerLogo:hover span:nth-child(2) {
+    color: #fff
+}
+
+.headerLogo span:nth-child(2) {
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    color: #f9627d
+}
+
+.landing {
+  background-color: #504a4a;
+  padding: 15px 30px;
+  border-radius: 5px;
+}
+
+.landing > h1 {
   color: #e23636;
-  font-size: 140%;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  font-family: 'PT Sans', sans-serif;;
+  font-weight: normal;
+}
+
+.landing > input, .landing > form > input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.landing > form {
+  width: 100%;
+  min-width: 300px;
+}
+
+.landing > a {
+  margin-top: 15px;
+  padding: 10px 40px;
+  background-color: #333;
+  color: #fafafa;
+  border-color: transparent;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.landing > a:hover, .landing > a:focus {
+  background-color: #666;
+}
+
+.landing > a:active {
+  background-color: #fafafa;
+  color: #333;
+  border-color: #333;
 }
