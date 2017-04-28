@@ -1,12 +1,15 @@
 import { SET_SEARCH_TERM } from './actions'
 
 const DEFAULT_STATE = {
-  searchTerm: 'random'
+  searchTerm: '',
+  searchChar: ''
 }
 
 const setSearchTerm = (state, action) => {
+  const searchChar = action.searchTerm.length > 0 ? action.searchTerm[0].toUpperCase() : ''
   return Object.assign({}, state, {
-    searchTerm: action.searchTerm
+    searchTerm: action.searchTerm,
+    searchChar
   })
 }
 

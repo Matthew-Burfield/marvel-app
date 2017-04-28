@@ -40,6 +40,18 @@ header {
     left: 0px;
 }
 
+header input {
+  min-width: 250px;
+  max-width: 350px;
+  width: 33%;
+  padding: 4px;
+  border: 2px solid #504a4a;
+  border-radius: 4px;
+  font-size: 1.2em;
+  float: right;
+  margin-top: 10px;
+}
+
 .headerContainer {
     width: auto;
     max-width: 1280px;
