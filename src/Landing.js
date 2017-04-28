@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
 import axios from 'axios'
 import PropTypes from 'prop-types'
 import { setSearchTerm, saveMarvelCharacters } from './actionCreators'
@@ -31,16 +30,19 @@ const Landing = (props) => {
   return (
     <div className='landing-container'>
       <Header />
-      <div className='landing'>
-        <h1>Search for your favorite Marvel character</h1>
-        <input
-          className='searchBar'
-          type='text'
-          placeholder='search'
-          value={props.searchTerm}
-          onChange={handleSearchTermChange}
-        />
-        <Link to='/search'>Search</Link>
+      <div className='main-container'>
+        <img width='50%' height='auto' src='public/images/marvel-logo.png' alt='Marvel Logo' />
+        <h3 className='main-sub-title'>Your portal into the entire Marvel Universe!</h3>
+        <div className='search-container'>
+          <input
+            className='search-bar'
+            type='text'
+            placeholder='Search for your favorite MARVEL character'
+            value={props.searchTerm}
+            onChange={handleSearchTermChange}
+          />
+          <button className='search-button'><div className='search-icon' /></button>
+        </div>
       </div>
     </div>
   )
