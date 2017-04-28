@@ -1,4 +1,7 @@
-import { SET_SEARCH_TERM } from './actions'
+import {
+  SET_SEARCH_TERM,
+  SAVE_MARVEL_CHARACTERS
+} from './actions'
 
 export const setSearchTerm = (searchTerm) => {
   return {
@@ -7,3 +10,10 @@ export const setSearchTerm = (searchTerm) => {
   }
 }
 
+export const saveMarvelCharacters = (startingChar, listOfCharacters) => {
+  return {
+    type: SAVE_MARVEL_CHARACTERS,
+    startingChar,
+    listOfCharacters
+  }
+}

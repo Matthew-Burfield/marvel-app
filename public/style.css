@@ -32,12 +32,12 @@ a {
 }
 
 header {
-    color: #fff;
-    width: 100%;
-    background-color: #e23636;
-    font-family: 'PT Sans', sans-serif;
-    top: 0px;
-    left: 0px;
+  color: #fff;
+  width: 100%;
+  background-color: #e23636;
+  font-family: 'PT Sans', sans-serif;
+  top: 0px;
+  left: 0px;
 }
 
 header input {
@@ -53,34 +53,41 @@ header input {
 }
 
 .headerContainer {
-    width: auto;
-    max-width: 1280px;
-    float: none;
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 0;
-    padding-right: 0
+  width: auto;
+  max-width: 1280px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0
 }
 
 .headerContainer:after {
-    content: "";
-    display: table;
-    clear: both
+  content: "";
+  display: table;
+  clear: both
 }
 
 .headerLogo {
-    color: #fff;
-    letter-spacing: -5px;
-    font-size: 40px;
-    -webkit-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out;
-    font-weight: 900;
-    padding: 20px 40px;
+  color: #fff;
+  letter-spacing: -5px;
+  font-size: 40px;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  font-weight: 900;
+  padding: 20px 40px;
 }
 
 .headerLogo:hover {
-    color: #f9627d
+  color: #f9627d
+}
+
+.landing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .landing {
@@ -130,6 +137,8 @@ header input {
 .search {
   width: 90%;
   margin: 20px auto;
+  display: flex;
+  justify-content: center;
 }
 
 .show-card {
@@ -193,7 +202,7 @@ header input {
     flex: 1
 }
 
-.Grid--flexCells>.Grid-cell {
+.Grid--flexCells .Grid-cell {
     display: -webkit-box;
     display: -webkit-flex;
     display: flex
@@ -244,62 +253,62 @@ header input {
     flex: none
 }
 
-.Grid--fit>.Grid-cell {
+.Grid--fit .Grid-cell {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
     flex: 1
 }
 
-.Grid--full>.Grid-cell {
+.Grid--full .Grid-cell {
     -webkit-box-flex: 0;
     -webkit-flex: 0 0 100%;
     flex: 0 0 100%
 }
 
-.Grid--1of2>.Grid-cell {
+.Grid--1of2 .Grid-cell {
     -webkit-box-flex: 0;
     -webkit-flex: 0 0 50%;
     flex: 0 0 50%
 }
 
-.Grid--1of3>.Grid-cell {
+.Grid--1of3 .Grid-cell {
     -webkit-box-flex: 0;
     -webkit-flex: 0 0 33.3333%;
     flex: 0 0 33.3333%
 }
 
-.Grid--1of4>.Grid-cell {
+.Grid--1of4 .Grid-cell {
     -webkit-box-flex: 0;
     -webkit-flex: 0 0 25%;
     flex: 0 0 25%
 }
 
 @media (min-width: 384px) {
-    .small-Grid--fit>.Grid-cell {
+    .small-Grid--fit .Grid-cell {
         -webkit-box-flex:1;
         -webkit-flex: 1;
         flex: 1
     }
 
-    .small-Grid--full>.Grid-cell {
+    .small-Grid--full .Grid-cell {
         -webkit-box-flex: 0;
         -webkit-flex: 0 0 100%;
         flex: 0 0 100%
     }
 
-    .small-Grid--1of2>.Grid-cell {
+    .small-Grid--1of2 .Grid-cell {
         -webkit-box-flex: 0;
         -webkit-flex: 0 0 50%;
         flex: 0 0 50%
     }
 
-    .small-Grid--1of3>.Grid-cell {
+    .small-Grid--1of3 .Grid-cell {
         -webkit-box-flex: 0;
         -webkit-flex: 0 0 33.3333%;
         flex: 0 0 33.3333%
     }
 
-    .small-Grid--1of4>.Grid-cell {
+    .small-Grid--1of4 .Grid-cell {
         -webkit-box-flex: 0;
         -webkit-flex: 0 0 25%;
         flex: 0 0 25%
@@ -307,31 +316,31 @@ header input {
 }
 
 @media (min-width: 576px) {
-    .med-Grid--fit>.Grid-cell {
+    .med-Grid--fit .Grid-cell {
         -webkit-box-flex:1;
         -webkit-flex: 1;
         flex: 1
     }
 
-    .med-Grid--full>.Grid-cell {
+    .med-Grid--full .Grid-cell {
         -webkit-box-flex: 0;
         -webkit-flex: 0 0 100%;
         flex: 0 0 100%
     }
 
-    .med-Grid--1of2>.Grid-cell {
+    .med-Grid--1of2 .Grid-cell {
         -webkit-box-flex: 0;
         -webkit-flex: 0 0 50%;
         flex: 0 0 50%
     }
 
-    .med-Grid--1of3>.Grid-cell {
+    .med-Grid--1of3 .Grid-cell {
         -webkit-box-flex: 0;
         -webkit-flex: 0 0 33.3333%;
         flex: 0 0 33.3333%
     }
 
-    .med-Grid--1of4>.Grid-cell {
+    .med-Grid--1of4 .Grid-cell {
         -webkit-box-flex: 0;
         -webkit-flex: 0 0 25%;
         flex: 0 0 25%
@@ -339,31 +348,31 @@ header input {
 }
 
 @media (min-width: 768px) {
-    .large-Grid--fit>.Grid-cell {
+    .large-Grid--fit .Grid-cell {
         -webkit-box-flex:1;
         -webkit-flex: 1;
         flex: 1
     }
 
-    .large-Grid--full>.Grid-cell {
+    .large-Grid--full .Grid-cell {
         -webkit-box-flex: 0;
         -webkit-flex: 0 0 100%;
         flex: 0 0 100%
     }
 
-    .large-Grid--1of2>.Grid-cell {
+    .large-Grid--1of2 .Grid-cell {
         -webkit-box-flex: 0;
         -webkit-flex: 0 0 50%;
         flex: 0 0 50%
     }
 
-    .large-Grid--1of3>.Grid-cell {
+    .large-Grid--1of3 .Grid-cell {
         -webkit-box-flex: 0;
         -webkit-flex: 0 0 33.3333%;
         flex: 0 0 33.3333%
     }
 
-    .large-Grid--1of4>.Grid-cell {
+    .large-Grid--1of4 .Grid-cell {
         -webkit-box-flex: 0;
         -webkit-flex: 0 0 25%;
         flex: 0 0 25%
@@ -374,7 +383,7 @@ header input {
     margin: -1em 0 1em -1em
 }
 
-.Grid--gutters>.Grid-cell {
+.Grid--gutters .Grid-cell {
     padding: 1em 0 0 1em
 }
 
@@ -382,7 +391,7 @@ header input {
     margin: -1.5em 0 1.5em -1.5em
 }
 
-.Grid--guttersLg>.Grid-cell {
+.Grid--guttersLg .Grid-cell {
     padding: 1.5em 0 0 1.5em
 }
 
@@ -390,7 +399,7 @@ header input {
     margin: -2em 0 2em -2em
 }
 
-.Grid--guttersXl>.Grid-cell {
+.Grid--guttersXl .Grid-cell {
     padding: 2em 0 0 2em
 }
 
@@ -399,7 +408,7 @@ header input {
         margin:-1em 0 1em -1em
     }
 
-    .small-Grid--gutters>.Grid-cell {
+    .small-Grid--gutters .Grid-cell {
         padding: 1em 0 0 1em
     }
 
@@ -407,7 +416,7 @@ header input {
         margin: -1.5em 0 1.5em -1.5em
     }
 
-    .small-Grid--guttersLg>.Grid-cell {
+    .small-Grid--guttersLg .Grid-cell {
         padding: 1.5em 0 0 1.5em
     }
 
@@ -415,7 +424,7 @@ header input {
         margin: -2em 0 2em -2em
     }
 
-    .small-Grid--guttersXl>.Grid-cell {
+    .small-Grid--guttersXl .Grid-cell {
         padding: 2em 0 0 2em
     }
 }
@@ -425,7 +434,7 @@ header input {
         margin:-1em 0 1em -1em
     }
 
-    .med-Grid--gutters>.Grid-cell {
+    .med-Grid--gutters .Grid-cell {
         padding: 1em 0 0 1em
     }
 
@@ -433,7 +442,7 @@ header input {
         margin: -1.5em 0 1.5em -1.5em
     }
 
-    .med-Grid--guttersLg>.Grid-cell {
+    .med-Grid--guttersLg .Grid-cell {
         padding: 1.5em 0 0 1.5em
     }
 
@@ -441,7 +450,7 @@ header input {
         margin: -2em 0 2em -2em
     }
 
-    .med-Grid--guttersXl>.Grid-cell {
+    .med-Grid--guttersXl .Grid-cell {
         padding: 2em 0 0 2em
     }
 }
@@ -451,7 +460,7 @@ header input {
         margin:-1em 0 1em -1em
     }
 
-    .large-Grid--gutters>.Grid-cell {
+    .large-Grid--gutters .Grid-cell {
         padding: 1em 0 0 1em
     }
 
@@ -459,7 +468,7 @@ header input {
         margin: -1.5em 0 1.5em -1.5em
     }
 
-    .large-Grid--guttersLg>.Grid-cell {
+    .large-Grid--guttersLg .Grid-cell {
         padding: 1.5em 0 0 1.5em
     }
 
@@ -467,7 +476,7 @@ header input {
         margin: -2em 0 2em -2em
     }
 
-    .large-Grid--guttersXl>.Grid-cell {
+    .large-Grid--guttersXl .Grid-cell {
         padding: 2em 0 0 2em
     }
 }

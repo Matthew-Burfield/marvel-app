@@ -1,8 +1,12 @@
-import { SET_SEARCH_TERM } from './actions'
+import {
+  SET_SEARCH_TERM,
+  SAVE_MARVEL_CHARACTERS
+} from './actions'
 
 const DEFAULT_STATE = {
   searchTerm: '',
-  searchChar: ''
+  searchChar: '',
+  listOfCharacters: {}
 }
 
 const setSearchTerm = (state, action) => {
@@ -13,8 +17,15 @@ const setSearchTerm = (state, action) => {
   })
 }
 
+const saveMarvelCharacters = (state, action) => {
+  const listOfCharacters = Object.assign({}, state.listOfCharacters, {[action.startingChar]: action.listOfCharacters})
+  return Object.assign({}, state, {listOfCharacters})
+}
+
 const rootReducer = (state = DEFAULT_STATE, action) => {
   switch (action.type) {
+    case SAVE_MARVEL_CHARACTERS:
+      return saveMarvelCharacters(state, action)
     case SET_SEARCH_TERM:
       return setSearchTerm(state, action)
     default:
