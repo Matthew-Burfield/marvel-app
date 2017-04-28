@@ -4,7 +4,7 @@ import preload from '../public/data.json'
 const Search = () => {
   return (
     <div className='search'>
-      <div className='Grid Grid--gutters Grid--full large-Grid--fit'>
+      <div className='Grid Grid--gutters Grid--full large-Grid--1of4 med-Grid--1of2'>
         {preload.data.results.map(hero => {
           return (
             <div className='Grid-cell'>
@@ -17,38 +17,6 @@ const Search = () => {
             </div>
           )
         })}
-      </div>
-      <div className='Grid Grid--gutters Grid--full large-Grid--fit u-textCenter'>
-        <div className='Grid-cell'>
-          <div className='Demo'>Full / Halves</div>
-        </div><div className='Grid-cell'>
-          <div className='Demo'>Full / Halves</div>
-        </div>
-      </div>
-      <div className='Grid Grid--gutters Grid--full large-Grid--fit u-textCenter'>
-        <div className='Grid-cell'>
-          <div className='Demo'>Full / Thirds</div>
-        </div>
-        <div className='Grid-cell'>
-          <div className='Demo'>Full / Thirds</div>
-        </div>
-        <div className='Grid-cell'>
-          <div className='Demo'>Full / Thirds</div>
-        </div>
-      </div>
-      <div className='Grid Grid--gutters Grid--full large-Grid--fit u-textCenter'>
-        <div className='Grid-cell'>
-          <div className='Demo'>Full / Thirds</div>
-        </div>
-        <div className='Grid-cell'>
-          <div className='Demo'>Full / Thirds</div>
-        </div>
-        <div className='Grid-cell'>
-          <div className='Demo'>Full / Thirds</div>
-        </div>
-        <div className='Grid-cell'>
-          <div className='Demo'>Full / Thirds</div>
-        </div>
       </div>
     </div>
   )
