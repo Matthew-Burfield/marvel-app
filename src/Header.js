@@ -6,7 +6,7 @@ const Header = () => {
     <header>
       <div className='headerContainer'>
         <Link to='/'>
-          <h1 className='headerLogo'>MARVEL</h1>
+          <span className='headerLogo'>MARVEL</span>
         </Link>
       </div>
     </header>
