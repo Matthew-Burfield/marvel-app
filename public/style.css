@@ -110,11 +110,16 @@ header input {
   border-radius: 4px;
 }
 
-.main-container {
-  margin-top: 12%;
-  text-align: center;
+.animation-wrapper, .main-container {
   -webkit-transition: margin .7s ease-in-out;
   transition: margin .7s ease-in-out;
+  margin-top: 12%;
+  text-align: center;
+}
+
+.animation-wrapper {
+  -webkit-transition-delay: .5s;
+  transition-delay: .5s;
 }
 
 .main-container > img, .main-container > h3 {
@@ -184,8 +189,12 @@ input.search-bar {
   border-radius: 10px
 }
 
-.fly-up {
+.animation-wrapper.fly-up > .main-container {
   margin-top: -300px;
+}
+
+.animation-wrapper.fly-up {
+  margin-top: 0px;
 }
 
 .fly-up img, .fly-up h3 {
