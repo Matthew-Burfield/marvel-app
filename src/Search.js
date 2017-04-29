@@ -6,7 +6,7 @@ import SearchBar from './SearchBar'
 import Results from './Results'
 
 
-const Search = ({searchTerm}) => (
+const Search = ({searchTerm, match}) => (
   <div className='landing-container'>
     <Transition
       in
@@ -20,13 +20,14 @@ const Search = ({searchTerm}) => (
       </div>
     </Transition>
     {searchTerm.length > 0 &&
-      <Results />
+      <Results match={match} />
     }
   </div>
 )
 
 Search.propTypes = {
-  searchTerm: PropTypes.string
+  searchTerm: PropTypes.string,
+  match: PropTypes.object
 }
 
 const mapStateToProps = (state) => {

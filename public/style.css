@@ -110,6 +110,10 @@ header input {
   border-radius: 4px;
 }
 
+.above-screen {
+  margin-top: -50%;
+}
+
 .main-container {
   margin-top: 12%;
   text-align: center;

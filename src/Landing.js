@@ -1,12 +1,21 @@
 import React from 'react'
+import Transition from 'react-overlays/lib/Transition'
 import SearchBar from './SearchBar'
 
 
 const Landing = () => (
   <div className='landing-container'>
-    <div className='main-container'>
-      <SearchBar />
-    </div>
+    <Transition
+      in
+      transitionAppear
+      timeout={10}
+      className='above-screen'
+      enteredClassName='main-container'
+    >
+      <div>
+        <SearchBar />
+      </div>
+    </Transition>
   </div>
 )
 

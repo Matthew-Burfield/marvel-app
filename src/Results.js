@@ -4,9 +4,9 @@ import Transition from 'react-overlays/lib/Transition'
 import PropTypes from 'prop-types'
 import MarvelCharacter from './MarvelCharacter'
 
-const { string, array, bool } = PropTypes
+const { string, array, bool, object } = PropTypes
 
-const Results = ({ results, searchTerm, isLoading }) => {
+const Results = ({ results, searchTerm, isLoading, match }) => {
   const resultsDisplay = () => {
     if (isLoading) {
       return (
@@ -22,7 +22,7 @@ const Results = ({ results, searchTerm, isLoading }) => {
             return hero.name.toUpperCase().includes(searchTerm.toUpperCase())
           }).map(hero => {
             return (
-              <MarvelCharacter hero={hero} key={hero.id} />
+              <MarvelCharacter hero={hero} key={hero.id} match={match} />
             )
           })}
         </div>
@@ -48,7 +48,8 @@ const Results = ({ results, searchTerm, isLoading }) => {
 Results.propTypes = {
   searchTerm: string,
   results: array,
-  isLoading: bool
+  isLoading: bool,
+  match: object
 }
 
 Results.defaultProps = {

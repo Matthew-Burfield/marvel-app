@@ -14,6 +14,7 @@ const Routes = () => {
         <Header />
         <Route exact path='/' component={Landing} />
         <Route exact path='/search' component={Search} />
+        <Route exact path='/search/:heroID' render={() => <div>HELLO THERE</div>} />
       </div>
     </Provider>
   )
