@@ -1,6 +1,7 @@
 import {
   SET_SEARCH_TERM,
-  SAVE_MARVEL_CHARACTERS
+  SAVE_MARVEL_CHARACTERS,
+  SET_LOADING_FLAG
 } from './actions'
 
 export const setSearchTerm = (searchTerm) => {
@@ -15,5 +16,12 @@ export const saveMarvelCharacters = (startingChar, listOfCharacters) => {
     type: SAVE_MARVEL_CHARACTERS,
     startingChar,
     listOfCharacters
+  }
+}
+
+export const setLoadingFlag = (isLoading) => {
+  return {
+    type: SET_LOADING_FLAG,
+    isLoading: isLoading
   }
 }

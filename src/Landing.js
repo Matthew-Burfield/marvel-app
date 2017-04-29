@@ -4,7 +4,9 @@ import SearchBar from './SearchBar'
 
 const Landing = () => (
   <div className='landing-container'>
-    <SearchBar />
+    <div className='main-container'>
+      <SearchBar />
+    </div>
   </div>
 )
 

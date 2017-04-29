@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { setSearchTerm, saveMarvelCharacters } from './actionCreators'
+import { setSearchTerm, saveMarvelCharacters, setLoadingFlag } from './actionCreators'
 import axios from 'axios'
 import PropTypes from 'prop-types'
 
@@ -10,21 +10,17 @@ const SearchBar = ({ searchTerm, searchesCompleted, dispatch }) => {
     const searchChar = e.target.value.length > 0 ? e.target.value[0].toUpperCase() : ''
     dispatch(setSearchTerm(e.target.value))
     if (searchChar.length === 1 && !searchesCompleted.includes(searchChar)) {
-      // Fire off a search request
-      this.setState({
-        loading: true
-      })
       const url = 'https://gateway.marvel.com:443/v1/public/'
       const apiKey = '8af0ed60c8e890096e71cace5997cea0'
       const hash = '54ea9c162ff7f33d4d418a0ea4629829'
 
+      dispatch(setLoadingFlag(true))
+
       axios
         .get(`${url}/characters?nameStartsWith=${searchChar}&limit=100&ts=1&apikey=${apiKey}&hash=${hash}`)
         .then(response => {
+          dispatch(setLoadingFlag(false))
           dispatch(saveMarvelCharacters(searchChar, response.data.data.results))
-          this.setState({
-            loading: false
-          })
         })
         .catch(error => {
           console.error('axios error', error)
@@ -32,16 +28,12 @@ const SearchBar = ({ searchTerm, searchesCompleted, dispatch }) => {
     }
   }
 
-  const handleSearchFormSubmit = (e) => {
-    e.preventDefault()
-  }
-
   return (
-    <div className='main-container'>
+    <div>
       <img width='50%' height='auto' src='public/images/marvel-logo.png' alt='Marvel Logo' />
       <h3 className='main-sub-title'>Your portal into the entire Marvel Universe!</h3>
       <div className='search-container'>
-        <form onSubmit={handleSearchFormSubmit}>
+        <form to='/search'>
           <input
             className='search-bar'
             type='text'

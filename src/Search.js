@@ -6,47 +6,32 @@ import SearchBar from './SearchBar'
 import Results from './Results'
 
 
-class Search extends React.Component {
-  render () {
-    return (
-      <div className='landing-container'>
-        <Transition
-          in
-          transitionAppear
-          timeout={100}
-          className='fade'
-          enteredClassName='fly-up'
-        >
-          <div className='animation-wrapper'>
-            <SearchBar />
-          </div>
-        </Transition>
-        {/* {this.props.searchTerm.length > 0 &&
-          <div className={this.state.resultsContainerClass}>
-            <div>
-              <Results loading={this.state.loading} />}
-            </div>
-          </div>
-        } */}
+const Search = ({searchTerm}) => (
+  <div className='landing-container'>
+    <Transition
+      in
+      transitionAppear
+      timeout={100}
+      className='fade'
+      enteredClassName='fly-up'
+    >
+      <div className='main-container'>
+        <SearchBar />
       </div>
-    )
-  }
-}
+    </Transition>
+    {searchTerm.length > 0 &&
+      <Results />
+    }
+  </div>
+)
 
 Search.propTypes = {
-  searchTerm: PropTypes.string,
-  searchesCompleted: PropTypes.array,
-  dispatch: PropTypes.func
-}
-
-Search.defaultProps = {
-  searchesCompleted: []
+  searchTerm: PropTypes.string
 }
 
 const mapStateToProps = (state) => {
   return {
-    searchTerm: state.searchTerm,
-    searchesCompleted: Object.keys(state.listOfCharacters)
+    searchTerm: state.searchTerm
   }
 }
 

@@ -1,6 +1,7 @@
 import {
   SET_SEARCH_TERM,
-  SAVE_MARVEL_CHARACTERS
+  SAVE_MARVEL_CHARACTERS,
+  SET_LOADING_FLAG
 } from './actions'
 
 const DEFAULT_STATE = {
@@ -22,12 +23,18 @@ const saveMarvelCharacters = (state, action) => {
   return Object.assign({}, state, {listOfCharacters})
 }
 
+const setLoadingFlag = (state, action) => {
+  return Object.assign({}, state, {isLoading: action.isLoading})
+}
+
 const rootReducer = (state = DEFAULT_STATE, action) => {
   switch (action.type) {
     case SAVE_MARVEL_CHARACTERS:
       return saveMarvelCharacters(state, action)
     case SET_SEARCH_TERM:
       return setSearchTerm(state, action)
+    case SET_LOADING_FLAG:
+      return setLoadingFlag(state, action)
     default:
       return state
   }
