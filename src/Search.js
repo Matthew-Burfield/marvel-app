@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import MarvelCharacter from './MarvelCharacter'
-import Header from './Header'
 
 const Search = ({ results, searchTerm }) => {
   const showResults = () => {

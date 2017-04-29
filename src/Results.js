@@ -15,7 +15,7 @@ const Results = ({ results, searchTerm }) => {
         return hero.name.toUpperCase().includes(searchTerm.toUpperCase())
       }).map(hero => {
         return (
-          <MarvelCharacter hero={hero} />
+          <MarvelCharacter hero={hero} key={hero.id} />
         )
       })}
     </div>
