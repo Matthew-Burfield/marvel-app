@@ -3,10 +3,15 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import MarvelCharacter from './MarvelCharacter'
 
-const Results = ({ results, searchTerm }) => {
-  if (results.length === 0) {
+const { string, array, bool } = PropTypes
+
+const Results = ({ results, searchTerm, loading }) => {
+  if (loading) {
     return (
-      <div><img src='public/images/loading.gif' /></div>
+      <div className='results-loading-gif'>
+        <img src='public/images/loading-small.gif' />
+        <h2>Loading...</h2>
+      </div>
     )
   }
   return (
@@ -23,8 +28,9 @@ const Results = ({ results, searchTerm }) => {
 }
 
 Results.propTypes = {
-  searchTerm: PropTypes.string,
-  results: PropTypes.array
+  searchTerm: string,
+  results: array,
+  loading: bool
 }
 
 Results.defaultProps = {

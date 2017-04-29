@@ -12,25 +12,33 @@ class Landing extends React.Component {
     super(props)
     this.state = {
       mainContainerClass: 'main-container',
-      resultsContainerClass: 'results-container'
+      resultsContainerClass: 'results-container',
+      loading: false
     }
     this.handleSearchFormSubmit = this.handleSearchFormSubmit.bind(this)
     this.handleSearchTermChange = this.handleSearchTermChange.bind(this)
   }
 
   handleSearchTermChange (e) {
-    const { searchesCompleted, searchTerm, dispatch } = this.props
+    const { searchesCompleted, dispatch } = this.props
+    const searchChar = e.target.value.length > 0 ? e.target.value[0].toUpperCase() : ''
     dispatch(setSearchTerm(e.target.value))
-    if (e.target.value.length === 1 && !searchesCompleted.includes(searchTerm[0])) {
+    if (searchChar.length === 1 && !searchesCompleted.includes(searchChar)) {
       // Fire off a search request
+      this.setState({
+        loading: true
+      })
       const url = 'https://gateway.marvel.com:443/v1/public/'
       const apiKey = '8af0ed60c8e890096e71cace5997cea0'
       const hash = '54ea9c162ff7f33d4d418a0ea4629829'
-      const searchChar = e.target.value.length > 0 ? e.target.value[0].toUpperCase() : ''
+
       axios
         .get(`${url}/characters?nameStartsWith=${searchChar}&limit=100&ts=1&apikey=${apiKey}&hash=${hash}`)
         .then(response => {
           dispatch(saveMarvelCharacters(searchChar, response.data.data.results))
+          this.setState({
+            loading: false
+          })
         })
         .catch(error => {
           console.error('axios error', error)
@@ -66,9 +74,13 @@ class Landing extends React.Component {
             </form>
           </div>
         </div>
-        <div className={this.state.resultsContainerClass}>
-          <Results />
-        </div>
+        {this.props.searchTerm.length > 0 &&
+          <div className={this.state.resultsContainerClass}>
+            <div>
+              <Results loading={this.state.loading} />}
+            </div>
+          </div>
+        }
       </div>
     )
   }

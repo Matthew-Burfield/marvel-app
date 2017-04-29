@@ -19,7 +19,6 @@ const MarvelCharacter = ({ hero }) => {
 
 MarvelCharacter.propTypes = {
   hero: shape({
-    id: string,
     name: string,
     thumbnail: shape({
       path: string,
