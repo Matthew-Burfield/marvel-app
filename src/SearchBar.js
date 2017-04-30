@@ -10,8 +10,8 @@ import preload from '../public/data.json'
 const SearchBar = ({ searchTerm, searchesCompleted, dispatch }, context) => {
   const handleSearchTermChange = (e) => {
     const searchChar = e.target.value.length > 0 ? e.target.value[0].toUpperCase() : ''
-    this.props.dispatch(setSearchTerm(e.target.value))
-    this.props.dispatch(saveMarvelCharacters('A', preload.data.results))
+    dispatch(setSearchTerm(e.target.value))
+    dispatch(saveMarvelCharacters('A', preload.data.results))
     if (searchChar.length === 1 && !searchesCompleted.includes(searchChar)) {
     //   const url = 'https://gateway.marvel.com:443/v1/public/'
     //   const apiKey = '8af0ed60c8e890096e71cace5997cea0'
