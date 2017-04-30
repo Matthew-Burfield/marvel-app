@@ -227,6 +227,30 @@ input.search-bar {
   justify-content: center;
 }
 
+.character-details {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.character-details > div {
+    padding-left: 2%;
+  }
+
+.character-details > img {
+  max-height: 100vh;
+  max-width: 100vw;
+  width: auto;
+}
+
+@media (min-width: 768px) {
+  .character-details {
+    display: flex
+  }
+
+  .character-details > img {
+    max-width: 50vw;
+  }
+}
+
 /*.searchBar {
   font-size: 2em;
   border-radius: 2px;

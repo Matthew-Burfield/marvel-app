@@ -8,7 +8,7 @@ const Landing = () => (
     <Transition
       in
       transitionAppear
-      timeout={10}
+      timeout={100}
       className='above-screen'
       enteredClassName='main-container'
     >

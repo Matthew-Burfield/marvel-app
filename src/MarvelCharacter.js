@@ -8,7 +8,10 @@ const { shape, string, object } = PropTypes
 const MarvelCharacter = ({ hero, match }) => {
   return (
     <div className='Grid-cell'>
-      <Link to={`${match.path}/${hero.id}`}>
+      <Link
+        to={`${match.path}/${hero.id}`}
+        onClick={e => console.log(e.target.getBoundingClientRect())}
+      >
         <div style={{ height: 200, minWidth: 200, width: '100%', overflow: 'hidden', backgroundColor: 'tomato' }}>
           <img src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`} height='auto' width='100%' style={{ minHeight: 200, minWidth: 200 }} />
         </div>

@@ -5,6 +5,7 @@ import store from './store'
 import Header from './Header'
 import Landing from './Landing'
 import Search from './Search'
+import CharacterDetails from './CharacterDetails'
 import '../public/style.css'
 
 const Routes = () => {
@@ -14,7 +15,7 @@ const Routes = () => {
         <Header />
         <Route exact path='/' component={Landing} />
         <Route exact path='/search' component={Search} />
-        <Route exact path='/search/:heroID' render={() => <div>HELLO THERE</div>} />
+        <Route exact path='/search/:heroID' component={CharacterDetails} />
       </div>
     </Provider>
   )
