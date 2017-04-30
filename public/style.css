@@ -228,11 +228,12 @@ input.search-bar {
 }
 
 .character-details {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .character-details > div {
     padding-left: 2%;
+    max-width: 600px;
   }
 
 .character-details > img {
@@ -241,13 +242,21 @@ input.search-bar {
   width: auto;
 }
 
+.character-details > h3 {
+    font-size: 1em;
+  }
+
 @media (min-width: 768px) {
   .character-details {
-    display: flex
+    display: flex;
   }
 
   .character-details > img {
     max-width: 50vw;
+  }
+
+  .character-details > h3 {
+    font-size: 1em;
   }
 }
 

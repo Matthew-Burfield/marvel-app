@@ -30,12 +30,16 @@ const SearchBar = ({ searchTerm, searchesCompleted, dispatch }) => {
     // }
   }
 
+  const handleSearchTermSubmit = e => {
+    e.preventDefault()
+  }
+
   return (
     <div>
       <img width='50%' height='auto' src='public/images/marvel-logo.png' alt='Marvel Logo' />
       <h3 className='main-sub-title'>Your portal into the entire Marvel Universe!</h3>
       <div className='search-container'>
-        <form to='/search'>
+        <form onSubmit={handleSearchTermSubmit}>
           <input
             className='search-bar'
             type='text'
