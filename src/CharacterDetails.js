@@ -95,6 +95,10 @@ class CharacterDetails extends React.Component {
     : null
   }
 
+  getImageUrl (hero) {
+    return `${hero.thumbnail.path.replace('http', 'https')}.${hero.thumbnail.extension}`
+  }
+
   render () {
     const hero = this.state.hero
     if (hero) {
@@ -102,7 +106,7 @@ class CharacterDetails extends React.Component {
       const heroComicsLink = hero.urls.filter(url => url.type === 'comiclink')
       return (
         <div className='Grid-cell character-details' style={this.state.styles}>
-          <img style={this.state.imgStyles} src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`} />
+          <img style={this.state.imgStyles} src={this.getImageUrl(hero)} />
           <div>
             <h1>{hero.name}</h1>
             <h4>{hero.description}</h4>

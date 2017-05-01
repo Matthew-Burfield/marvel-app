@@ -6,6 +6,16 @@ import PropTypes from 'prop-types'
 const { shape, string, object, func } = PropTypes
 
 
+/**
+ * Converts the image url to https since it's being hosted on github pages for now
+ */
+const getImageUrl = (hero) => {
+  return `${hero.thumbnail.path.replace('http', 'https')}.${hero.thumbnail.extension}`
+}
+
+/**
+ * Displays the individual Marvel Character on /search route
+ */
 const MarvelCharacter = ({ hero, match, dispatch }) => {
   return (
     <div className='Grid-cell'>
@@ -14,7 +24,7 @@ const MarvelCharacter = ({ hero, match, dispatch }) => {
         onClick={e => dispatch(setClientRect(e.target.getBoundingClientRect()))}
       >
         <div style={{ height: 200, minWidth: 200, width: '100%', overflow: 'hidden', backgroundColor: 'tomato' }}>
-          <img src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`} height='auto' width='100%' style={{ minHeight: 200, minWidth: 200 }} />
+          <img src={getImageUrl(hero)} height='auto' width='100%' style={{ minHeight: 200, minWidth: 200 }} />
         </div>
       </Link>
       <div>
