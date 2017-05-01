@@ -227,8 +227,31 @@ input.search-bar {
   justify-content: center;
 }
 
+/** TEST **/
+
+.Grid-cell.character-details.before-transition {
+  position: absolute;
+  overflow: hidden;
+  height: 200px;
+  width: 289.09375px;
+  top: 472.4375px;
+  left: 693.984375px;
+}
+
+.Grid-cell.character-details.before-transition img {
+  height: 200px;
+  width: 289.09375px;
+}
+
 .character-details {
   background: rgba(255, 255, 255, 0.9);
+  width: 100vw;
+  height: 90vh;
+  left: 0;
+  top: 0;
+  position: relative;
+  overflow: visible;
+  transition: all 1s;
 }
 
 .character-details > div {

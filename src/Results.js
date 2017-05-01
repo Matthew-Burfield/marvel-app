@@ -4,9 +4,9 @@ import Transition from 'react-overlays/lib/Transition'
 import PropTypes from 'prop-types'
 import MarvelCharacter from './MarvelCharacter'
 
-const { string, array, bool, object } = PropTypes
+const { string, array, bool, object, func } = PropTypes
 
-const Results = ({ results, searchTerm, isLoading, match }) => {
+const Results = ({ results, searchTerm, isLoading, match, dispatch }) => {
   const resultsDisplay = () => {
     const filteredResults = results.filter(hero => {
       return hero.name.toUpperCase().includes(searchTerm.toUpperCase())
@@ -33,7 +33,7 @@ const Results = ({ results, searchTerm, isLoading, match }) => {
       <div className='Grid Grid--gutters Grid--full large-Grid--1of4 med-Grid--1of2'>
         {filteredResults.map(hero => {
           return (
-            <MarvelCharacter hero={hero} key={hero.id} match={match} />
+            <MarvelCharacter hero={hero} key={hero.id} match={match} dispatch={dispatch} />
           )
         })}
       </div>
@@ -59,7 +59,8 @@ Results.propTypes = {
   searchTerm: string,
   results: array,
   isLoading: bool,
-  match: object
+  match: object,
+  dispatch: func
 }
 
 Results.defaultProps = {

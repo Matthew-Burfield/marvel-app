@@ -1,7 +1,8 @@
 import {
   SET_SEARCH_TERM,
   SAVE_MARVEL_CHARACTERS,
-  SET_LOADING_FLAG
+  SET_LOADING_FLAG,
+  SET_CLIENT_RECT
 } from './actions'
 
 export const setSearchTerm = (searchTerm) => {
@@ -23,5 +24,12 @@ export const setLoadingFlag = (isLoading) => {
   return {
     type: SET_LOADING_FLAG,
     isLoading: isLoading
+  }
+}
+
+export const setClientRect = (clientRect) => {
+  return {
+    type: SET_CLIENT_RECT,
+    clientRect
   }
 }
