@@ -6,6 +6,8 @@ const { object, arrayOf } = PropTypes
 
 const CharacterDetails = ({ listOrCharacters, match }) => {
   const hero = listOrCharacters.filter(hero => '' + hero.id === match.params.heroID)[0]
+  const heroWikiLink = hero.urls.filter(url => url.type === 'wiki')
+  const heroComicsLink = hero.urls.filter(url => url.type === 'comiclink')
 
   const getSeriesAppearances = (series) => {
     const sortedSeries = series.items.sort((a, b) => {
@@ -25,13 +27,18 @@ const CharacterDetails = ({ listOrCharacters, match }) => {
           <h4>Other appearances in:</h4>
           <ul>
             {sortedSeries.map(item => {
-              return <li key={item.name}>{item.name}</li>
+              return <li key={item.resourceURI}>{item.name}</li>
             })}
           </ul>
         </div>
       )
     }
     return null
+  }
+  const displayButton = (Name, linkArray) => {
+    return linkArray.length > 0
+    ? <a target='_blank' href={linkArray[0].url}>{Name}</a>
+    : null
   }
   return (
     <div className='Grid-cell character-details'>
@@ -40,6 +47,10 @@ const CharacterDetails = ({ listOrCharacters, match }) => {
         <h1>{hero.name}</h1>
         <h4>{hero.description}</h4>
         {getSeriesAppearances(hero.series)}
+        <div className='links'>
+          {displayButton('View Wiki', heroWikiLink)}
+          {displayButton('View Comics', heroComicsLink)}
+        </div>
       </div>
     </div>
   )

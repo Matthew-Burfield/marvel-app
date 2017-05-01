@@ -8,6 +8,18 @@ const { string, array, bool, object } = PropTypes
 
 const Results = ({ results, searchTerm, isLoading, match }) => {
   const resultsDisplay = () => {
+    const filteredResults = results.filter(hero => {
+      return hero.name.toUpperCase().includes(searchTerm.toUpperCase())
+    })
+
+    if (!isLoading && filteredResults.length === 0) {
+      return (
+        <div className='results-loading-gif'>
+          <h1>No results found. Try another search.</h1>
+        </div>
+      )
+    }
+
     if (isLoading) {
       return (
         <div className='results-loading-gif'>
@@ -15,19 +27,17 @@ const Results = ({ results, searchTerm, isLoading, match }) => {
           <h2>Loading...</h2>
         </div>
       )
-    } else {
-      return (
-        <div className='Grid Grid--gutters Grid--full large-Grid--1of4 med-Grid--1of2'>
-          {results.filter(hero => {
-            return hero.name.toUpperCase().includes(searchTerm.toUpperCase())
-          }).map(hero => {
-            return (
-              <MarvelCharacter hero={hero} key={hero.id} match={match} />
-            )
-          })}
-        </div>
-      )
     }
+
+    return (
+      <div className='Grid Grid--gutters Grid--full large-Grid--1of4 med-Grid--1of2'>
+        {filteredResults.map(hero => {
+          return (
+            <MarvelCharacter hero={hero} key={hero.id} match={match} />
+          )
+        })}
+      </div>
+    )
   }
 
   return (

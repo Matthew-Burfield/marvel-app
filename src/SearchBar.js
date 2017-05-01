@@ -13,21 +13,21 @@ const SearchBar = ({ searchTerm, searchesCompleted, dispatch }, context) => {
     dispatch(setSearchTerm(e.target.value))
     dispatch(saveMarvelCharacters('A', preload.data.results))
     if (searchChar.length === 1 && !searchesCompleted.includes(searchChar)) {
-    //   const url = 'https://gateway.marvel.com:443/v1/public/'
-    //   const apiKey = '8af0ed60c8e890096e71cace5997cea0'
-    //   const hash = '54ea9c162ff7f33d4d418a0ea4629829'
+      const url = 'https://gateway.marvel.com:443/v1/public/'
+      const apiKey = '8af0ed60c8e890096e71cace5997cea0'
+      const hash = '54ea9c162ff7f33d4d418a0ea4629829'
 
-    //   dispatch(setLoadingFlag(true))
+      dispatch(setLoadingFlag(true))
 
-    //   axios
-    //     .get(`${url}/characters?nameStartsWith=${searchChar}&limit=100&ts=1&apikey=${apiKey}&hash=${hash}`)
-    //     .then(response => {
-    //       dispatch(setLoadingFlag(false))
-    //       dispatch(saveMarvelCharacters(searchChar, response.data.data.results))
-    //     })
-    //     .catch(error => {
-    //       console.error('axios error', error)
-    //     })
+      axios
+        .get(`${url}/characters?nameStartsWith=${searchChar}&limit=100&ts=1&apikey=${apiKey}&hash=${hash}`)
+        .then(response => {
+          dispatch(setLoadingFlag(false))
+          dispatch(saveMarvelCharacters(searchChar, response.data.data.results))
+        })
+        .catch(error => {
+          console.error('axios error', error)
+        })
     }
   }
 
