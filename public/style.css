@@ -229,18 +229,9 @@ input.search-bar {
 
 /** TEST **/
 
-.Grid-cell.character-details.before-transition {
-  position: absolute;
-  overflow: hidden;
-  height: 200px;
-  width: 289.09375px;
-  top: 472.4375px;
-  left: 693.984375px;
-}
-
 .Grid-cell.character-details.before-transition img {
   height: 200px;
-  width: 289.09375px;
+  width: 280px;
 }
 
 .character-details {
@@ -263,6 +254,7 @@ input.search-bar {
   max-height: 70vh;
   max-width: 100vw;
   width: auto;
+  transition: width 1s, height 1s;
 }
 
 .character-details > h3 {
@@ -344,113 +336,6 @@ a {
   opacity: 1;
   height: 150%;
 }
-
-/*.searchBar {
-  font-size: 2em;
-  border-radius: 2px;
-  width: 100%;
-  margin: auto;
-  -webkit-transition: -webkit-transform .7s ease-in-out, width .7s ease-in-out;
-  transition: transform .7s ease-in-out, width .7s ease-in-out;
-  -webkit-transform: translateY(1000%);
-  transform: translateY(1000%)
-}
-
-@media (min-width: 576px) {
-  .searchBar {
-    width: 50%
-  }
-}
-
-.heroFlyUp {
-  -webkit-transform: translateY(0%);
-  transform: translateY(0%);
-  width: 40%;
-}
-
-.heroFlyUp .heroSubTitle,.heroFlyUp .heroTitle {
-    opacity: 0
-}*/
-
-/*.searchHero {
-    width: auto;
-    max-width: 1280px;
-    float: none;
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 0;
-    padding-right: 0;
-    position: relative;
-    height: 100vh;
-    overflow: hidden
-}
-
-.searchHero:after {
-    content: "";
-    display: table;
-    clear: both
-}
-
-.heroTitle {
-    -webkit-transition: opacity .6s ease-in-out;
-    transition: opacity .6s ease-in-out;
-    text-align: center;
-    font-size: 600%;
-    text-shadow: 1px 1px rgba(0,0,0,.7);
-    font-weight: 700
-}
-
-.heroTitle span:nth-child(2) {
-    color: #f9627d
-}
-
-.heroSubTitle {
-    -webkit-transition: opacity .5s ease-in-out;
-    transition: opacity .5s ease-in-out;
-    text-align: center;
-    text-shadow: 1px 1px rgba(0,0,0,.7)
-}
-
-.heroSubTitle span:nth-child(2) {
-    font-weight: 700
-}
-
-.heroSubTitle span:nth-child(3) {
-    color: #f9627d;
-    font-weight: 700
-}
-
-.heroSubTitle span:nth-child(4) {
-    font-weight: 700
-}
-
-.searchHeroCenter {
-    width: 50%;
-    margin-left: 25%;
-    -webkit-transition: -webkit-transform .7s ease-in-out;
-    transition: -webkit-transform .7s ease-in-out;
-    transition: transform .7s ease-in-out;
-    transition: transform .7s ease-in-out,-webkit-transform .7s ease-in-out;
-    -webkit-transform: translateY(105%);
-    transform: translateY(105%)
-}
-
-
-
-.searchBarOuter {
-    position: relative
-}
-
-
-
-
-
-.searchResults {
-    position: relative;
-    margin-top: -60px
-}*/
-
 
 /** FLEX BOX **/
 *,:after,:before {
