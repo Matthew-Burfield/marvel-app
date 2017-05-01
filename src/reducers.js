@@ -2,7 +2,8 @@ import {
   SET_SEARCH_TERM,
   SAVE_MARVEL_CHARACTERS,
   SET_LOADING_FLAG,
-  SET_CLIENT_RECT
+  SET_CLIENT_RECT,
+  CLEAR_CLIENT_RECT
 } from './actions'
 
 const DEFAULT_STATE = {
@@ -32,6 +33,12 @@ const setClientRect = (state, action) => {
   return Object.assign({}, state, {clientRect: action.clientRect})
 }
 
+const clearClientRect = (state, action) => {
+  const newState = Object.assign({}, state)
+  delete newState.clientRect
+  return newState
+}
+
 const rootReducer = (state = DEFAULT_STATE, action) => {
   switch (action.type) {
     case SAVE_MARVEL_CHARACTERS:
@@ -42,6 +49,8 @@ const rootReducer = (state = DEFAULT_STATE, action) => {
       return setLoadingFlag(state, action)
     case SET_CLIENT_RECT:
       return setClientRect(state, action)
+    case CLEAR_CLIENT_RECT:
+      return clearClientRect(state, action)
     default:
       return state
   }
