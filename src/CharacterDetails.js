@@ -1,13 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 const { object, arrayOf } = PropTypes
 
 const CharacterDetails = ({ listOrCharacters, match }) => {
-  const hero = listOrCharacters.filter(hero => '' + hero.id === match.params.heroID)[0]
-  const heroWikiLink = hero.urls.filter(url => url.type === 'wiki')
-  const heroComicsLink = hero.urls.filter(url => url.type === 'comiclink')
+  const hero = listOrCharacters.length > 0 ? listOrCharacters.filter(hero => '' + hero.id === match.params.heroID)[0] : undefined
 
   const getSeriesAppearances = (series) => {
     const sortedSeries = series.items.sort((a, b) => {
@@ -35,22 +34,38 @@ const CharacterDetails = ({ listOrCharacters, match }) => {
     }
     return null
   }
+
+
   const displayButton = (Name, linkArray) => {
     return linkArray.length > 0
-    ? <a target='_blank' href={linkArray[0].url}>{Name}</a>
+    ? <a className='details' target='_blank' href={linkArray[0].url}>{Name}</a>
     : null
   }
-  return (
-    <div className='Grid-cell character-details'>
-      <img src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`} />
-      <div>
-        <h1>{hero.name}</h1>
-        <h4>{hero.description}</h4>
-        {getSeriesAppearances(hero.series)}
-        <div className='links'>
-          {displayButton('View Wiki', heroWikiLink)}
-          {displayButton('View Comics', heroComicsLink)}
+
+
+  if (hero) {
+    const heroWikiLink = hero.urls.filter(url => url.type === 'wiki')
+    const heroComicsLink = hero.urls.filter(url => url.type === 'comiclink')
+    return (
+      <div className='Grid-cell character-details'>
+        <img src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`} />
+        <div>
+          <h1>{hero.name}</h1>
+          <h4>{hero.description}</h4>
+          {getSeriesAppearances(hero.series)}
+          <div className='links'>
+            {displayButton('View Wiki', heroWikiLink)}
+            {displayButton('View Comics', heroComicsLink)}
+          </div>
         </div>
+      </div>
+    )
+  }
+  return (
+    <div className='Grid-cell character-details' style={{ flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+      <h1>Please go back and search again</h1>
+      <div className='links'>
+        <Link className='error' to='/'>Home</Link>
       </div>
     </div>
   )
@@ -63,7 +78,7 @@ CharacterDetails.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    listOrCharacters: state.listOfCharacters[state.searchChar]
+    listOrCharacters: state.listOfCharacters[state.searchChar] || []
   }
 }
 
